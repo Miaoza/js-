@@ -6,6 +6,7 @@ var t = true;
 
 window.setTimeout(function (){
     t = false;
+    alert('haha');
 },1000);
 
 while (t){}
