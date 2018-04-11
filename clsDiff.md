@@ -1,18 +1,24 @@
 
-             cookie           |           localStorage           |           sessionStorage
-数据生   可设置失效时间，默认是        除非被清除，否则永久保存               仅在当前会话下有效，关闭页面或浏览器后被清除
-命周期   关闭浏览器后失效    
+数据生命周期:
+          (cookie)可设置失效时间，默认是关闭浏览器后失效       
+          (localStorage)除非被清除，否则永久保存                
+          (sessionStorage)仅在当前会话下有效，关闭页面或浏览器后被清除
 
-存放数   4K左右                      一般为5MB                          一般为5MB
-据大小
+存放数据大小:        
+          (cookie)4K左右                                 
+          (localStorage)一般为5MB                          
+          (sessionStorage)一般为5MB
 
-与服务器  每次都会携带在HTTP头中，      仅在客户端（即浏览器）中保存，         仅在客户端（即浏览器）中保存，不参与和服务器的通信
-端通信    如果使用cookie保存过多       不参与和服务器的通信
-         数据会带来性能问题
+易用性: 
+          (cookie)需要程序员自己封装，源生的Cookie接口不友好   
+          (localStorage)源生接口可以接受，亦可再次封装来对Object 和 Array 有更好的支持     
+          (sessionStorage)源生接口可以接受，亦可再次封装来对Object 和 Array 有更好的支持
 
-易用性    需要程序员自己封装，          源生接口可以接受，亦可再次封装来对      同左
-         源生的Cookie接口不友好       Object 和 Array 有更好的支持
-         
+与服务器端通信 :
+             (cookie)每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题        
+             (localStorage)仅在客户端（即浏览器）中保存，不参与和服务器的通信         
+             (sessionStorage)仅在客户端（即浏览器）中保存，不参与和服务器的通
+                
          
 1.Cookie 是存储在客户端的小型文本文件，可以包含若干键值对，每个键值对可以设置过期时间（默认过期时间为关闭浏览器时）。 
   Cookie 会在每次发送 HTTP 请求时附加到Cookie头字段，服务器以此得知用户所处的状态。 在 HTTP 标准中，
