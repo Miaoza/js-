@@ -36,9 +36,9 @@ function func3(){
   return child2;
 }
 var test2=func3();
-test3();  // 1
+test2();  // 1
 nAdd();   // 2
-test3(); // 2
+test2(); // 2
 
 //在退出函数之前，将不使用的局部变量全部删除
 
