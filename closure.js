@@ -12,8 +12,8 @@ function func1(){
 // 闭包就是能够读取其他函数内部变量的函数
 // 在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁
 function func2(){
-  console.log(a);// undefined 
-  var a = 112;//使用闭包的目的——隐藏变量
+  console.log(a); // undefined 
+  var a = 112; // 使用闭包的目的——隐藏变量
   function child1(){
     return a;
   }
@@ -23,10 +23,10 @@ function func2(){
 var test1=func2();
 test1(); // 112
 
-//闭包最大用处:一个是可以读取函数内部的变量，另一个是让这些变量的值始终保持在内存中
+// 闭包最大用处: 一个是可以读取函数内部的变量，另一个是让这些变量的值始终保持在内存中
 function func3(){
   var n=1;
-  nAdd=function(){
+  nAdd=function(){  // nAdd 全局变量
     n+=1;
     console.log(n);
   }
@@ -39,8 +39,9 @@ var test2=func3();
 test2();  // 1
 nAdd();   // 2
 test2(); // 2
+// child2(); Uncaught ReferenceError: child2 is not defined(…)
 
-//在退出函数之前，将不使用的局部变量全部删除
+// 在退出函数之前，将不使用的局部变量全部删除
 
 var name = 'window name';
 var obj = {
