@@ -15,7 +15,7 @@ o.afun = func2;
 o.afun(o); //true 
 
 
-//绑定没有传递性，比如上面的嵌套的函数，a绑定到 o 对象，那么就影响了a函数，而b 还是指向到window
+//绑定没有传递性，比如上面的嵌套的函数，func3绑定到 obj 对象，那么就影响了func3函数，而 fun 还是指向到window
 function func3() 
 { 
   console.log(this); //obj
