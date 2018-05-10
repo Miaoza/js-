@@ -66,7 +66,6 @@ function Child(age){
     // call和apply是为了动态改变this而出现的
     // Parent.call(this, arg1, arg2) 或者 Parent.apply(this, [arg1, arg2]); 来调用
 }
-Child.prototype = new Parent();// 原型链继承   Child.constructor==Parent
-Child.prototype.constructor = Child; // Child.constructor==Child
+Child.prototype = new Parent();// 原型链继承
 var test = new Child(21);// 写new Parent(21)也行
 alert(test.run());// 'Nianko','Natusme','Miao' are 21
